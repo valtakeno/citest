@@ -10,3 +10,4 @@ notifications:
     - takeno@val.co.jp
   on_success: always # default: change
   on_failure: always
+
