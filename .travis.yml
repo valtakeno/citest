@@ -6,9 +6,9 @@ branches:
   only: 
     - master
 before_install:
-  - mkdir -p ~/_build/
+  - mkdir -p _build
 script: 
-  - javac HelloWorld.java -d ~/_build/
+  - javac HelloWorld.java -d _build
 
 deploy:
   # S3固定
@@ -28,7 +28,7 @@ deploy:
   # ビルド後のクリーンアップを抑制する
   skip_cleanup: true
   # Travis側のビルド結果のディレクトリ、この内容をs3にputする
-  local-dir: ~/_build/
+  local-dir: _build
   # s3側のディレクトリ、このディレクトリにputする
   upload-dir: travisci
 
