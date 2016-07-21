@@ -37,3 +37,7 @@ notifications:
     - takeno@val.co.jp
   on_success: always # default: change
   on_failure: always
+
+# 成功時と失敗時にそれぞれスクリプトを実行させる
+after_success: .travis/after_success.sh "テストです。"
+after_failure: .travis/after_failure.sh "テストです。"
