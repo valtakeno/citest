@@ -28,7 +28,7 @@ deploy:
   # ビルド後のクリーンアップを抑制する
   skip_cleanup: true
   # Travis側のビルド結果のディレクトリ、この内容をs3にputする
-  local-dir: ~/_buid/
+  local-dir: ~/_build/
   # s3側のディレクトリ、このディレクトリにputする
   upload-dir: travisci
 
