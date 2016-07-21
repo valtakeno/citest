@@ -1,0 +1,12 @@
+language: java
+jdk:
+  - openjdk6
+  - openjdk7
+script: 
+  - javac HelloWorld.java
+
+notifications:
+  emails:
+    - takeno@val.co.jp
+  on_success: always # default: change
+  on_failure: always
