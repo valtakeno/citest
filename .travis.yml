@@ -40,9 +40,9 @@ notifications:
 
 # 成功時と失敗時にそれぞれスクリプトを実行させる
 after_success: 
-  - chmod -x .travis/after_success.sh
-  - sudo .travis/after_success.sh "テストです。"
+  - chmod +x .travis/after_success.sh
+  - .travis/after_success.sh "テストです。"
 after_failure: 
-  - chmod -x .travis/after_failure.sh
-  - sudo .travis/after_failure.sh "テストです。"
+  - chmod +x .travis/after_failure.sh
+  - .travis/after_failure.sh "テストです。"
 
