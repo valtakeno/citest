@@ -14,7 +14,7 @@ before_install:
   - eval `ssh-agent -s`
   - chmod 600 ~/.ssh/config
   - openssl aes-256-cbc -K $encrypted_1fc90f464345_key -iv $encrypted_1fc90f464345_iv -in infrakey.pem.enc -out ./infrakey.pem -d
-  - mv key.pem ~/.ssh/
+  - mv infrakey.pem ~/.ssh/
   - chmod 600 ~/.ssh/infrakey.pem
 #install:
 #  - sudo pip install awscli
