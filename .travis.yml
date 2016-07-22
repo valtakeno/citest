@@ -15,7 +15,7 @@ before_install:
   - chmod 600 ~/.ssh/config
   - openssl aes-256-cbc -K $encrypted_1fc90f464345_key -iv $encrypted_1fc90f464345_iv -in infrakey.pem.enc -out ./infrakey.pem -d
   - mv key.pem ~/.ssh/
-  - chmod 600 ~/.ssh/key.pem
+  - chmod 600 ~/.ssh/infrakey.pem
 #install:
 #  - sudo pip install awscli
 before_script:
@@ -61,4 +61,4 @@ notifications:
 
 after_success: 
 #  - aws ec2 start-instances --instance-ids i-f5a9e46a
-  - ssh -i ~/.ssh/key.pem centos@ ls -l /etc/
+  - ssh -i ~/.ssh/infrakey.pem centos@ ls -l /etc/
