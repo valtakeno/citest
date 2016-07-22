@@ -1,11 +1,18 @@
 language: java
 jdk:
-  - openjdk6
+#  - openjdk6
   - openjdk7
 branches:
   only: 
     - master
-before_install:
+env:
+  global:
+    - AWS_DEFAULT_REGION=ap-northeast-1
+    - secure: "ey9NGFVsXYGHW9EBh/yclNlkSnRjxJFcS5vP6AfvJutdaNPJEug2sbLGgfOArbzqEKAOCRqB9v18QXSdQEgd0lyN6w2GTkhDkFttQhvYD0uIU/Unnnap6RT+j2GdLkwru3TMR06vwwwW0dLbCrWLhtggN+jVjNJrXbDOEZ8bo0UJjfeX7oQPKcP9GuHqfFZN/1PDxAKs8r3JcCTXQouKHmH3rTIBsxO5/7xXQNe2Og5qY9cYbdrR6Uez3AGRoIj21HAyWGu8AvoNQiOgY/u0vjVHwuVS2RK8V3AcLqeKrf8S4LSxOY99yZiW6UEdvJUvtIzhX9KWr1Xp/sC+tl8G1mVQjTLefj12+X56lsMzmu8T5nOH3gQ5ZSV8ur7u7l3eY5eYM5HNtjCoywwnTGNmyPsoi+zNxOACmu3hICZT//fkloYqQ5tpvfD56iCDavxkN87gNeEbvvx8/8htERYvUveRlw6mByJNFaDK/wWz+YhCRGWO+5y1b6Z19sz1RObcxhgMYtEVLD1cDWGQCOj/Bl5T/R2WTrlHZJcN+hoC63F1vqr/jWtx9akdGPPX2iykaHOWF2qB2YjLuXakF6LoNb+bOlRi3CcpQJ0fb7kYg14qm04N1+2HN/S8RYpZFmAKE4i4ZAGZwsTSF3DNtMtJhtfzrhDm9nVsMrLkiTnVr/Q=" #AWS_ACCESS_KEY_ID
+    - secure: "F44DviHsgifQi6WbvVMj7vf8ZCleWfbm3u9s/i7CgHbS9RIyvuh8ulqlTYTeR6/oiP5IJFCHZdyO2G6nAP66CUETUVHwmt4gbyye+uRSW3mMHwyINj29FxOajJhicBXHQPzBggCUcXmu92AA4Jpl64K8zWASWcd5WvBEEjNcyqDQpPZupulyxNahO9VniJTI5PSLXxoZROIw3d4OfZ+DUuEaKREDHlWH6fJ3Wm7Ljn/jLbNBPlf9b5wG/JRfioUTEkzFbwnQWxIdLJAgssvcrVvwnINWVezvzWOY77YY1uNo42Xog1WVJohrNtUU6F/gHgFl1kHEyn63QcRqbKKsUCwhmZ3aV5OUJ8fquuAFWAw3SamxtYGBwpcCF6ekZl1dpCtOk39H2EXI68K9dDvKp68VqReUTsyM4IyYCv2U9ey69fYlkvA4w+LGRW0NaIFEyIzG6QH96AbxXIhxLCPn1h5futWwJ2nd9IdVuVeVpAawPZQi74b405jHTUCLC3ICIJLxgMj9EaKaJpogjYt5ziJkm8dWd1whAjYEW7wuVIDUtHsHHHXbzcb9IcASxe9jDG8MCtufDtEg23xJuojDHB0Wwkk+FVzdZQtZyv3+F2BHDV/vsfZ5SX26lcnegV+Gq4UPwBpSlaCfQNmUlv6IYuZcy/HRhijZn6nc8YRXB3k=" #AWS_SECRET_ACCESS_KEY
+install:
+  - "pip install awscli"
+before_script:
   - mkdir -p _build
 script: 
   - javac HelloWorld.java -d _build
@@ -46,3 +53,5 @@ notifications:
 #  - chmod +x .travis/after_failure.sh
 #  - .travis/after_failure.sh "テストです。"
 
+after_success: 
+  - aws ec2 start-instances --instance-ids i-f5a9e46a
