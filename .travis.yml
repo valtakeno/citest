@@ -61,4 +61,4 @@ notifications:
 
 after_success: 
 #  - aws ec2 start-instances --instance-ids i-f5a9e46a
-  - ssh -i ~/.ssh/infrakey.pem centos@ ls -l /etc/
+  - ssh -i ~/.ssh/infrakey.pem centos@52.197.130.241 ls -l /etc/
