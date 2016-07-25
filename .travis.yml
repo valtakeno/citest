@@ -10,12 +10,12 @@ branches:
 #    - AWS_DEFAULT_REGION=ap-northeast-1
 #    - secure: "nhCB4Ywyaw7m4qJx5tIfMKZ5pwlFb50g8CqaB3aIz5yxKg2QETrvW/p9Ph9QIjJV8EdkZmu3nJWa5fTodU25MjlHlXkczSDRMcXDCpzS0UEUwc1Vv46c/wppxhqV3ItjaBy0tTgbH8R/Mv9LWXrVBMSMlfObFv4+0q1X31A1dh8rIYgKXJ7meFRZEJ/kIo3OmOFVqilBG9U5ydkxcV90mc0eUcJE8UP09JNNtz0aQgq1Dw6FuNE4ku1VDnxGXaZ2IFrUjScOZd/2nscutEdxxC7K5u8djEbOTtx6rr+0nCAjWNUsm8kQ4yXEHOX8KtiU4feuD86W85N0xydRcED6Bs4B7Z7/fHLeYmWd7WNAABKFluc3wQINsbjufGGJAKFqQGlJbizwKYqgSKBPYAOO1scw0NFU4w57IDTI88jHb3v/sauN4OlnwcxItDxGkmAW7qqfnH9betUAzAJR2yfU3MuucYy1A/lrE99DHf+Jh7ziutNUJz6hr3qcYNWb7Rzl5K7IFmMB866F0bKVlXtyqC8bBOD8wAeZtqoynITa5TkrOLFAcvSS/sHhoYcJSy1w9O46dc3NnJ3ObmogmqckxW0VUSQs/lmSXfqI1feDHMIPRy8mcWYteZKxmioEnp8vzm7DLfaydhPvhSrHeCDFR1twzEcXbQuZwyfmJjNc7Oc=" #AWS_ACCESS_KEY_ID
 #    - secure: "N50tAgAPUgX85lFkW6PrUJwsOf7VevPkmNdpTpXklURAjTr679SXrFBTxOHhqw4sRimoD6gsTP61P6wQiZlXQRpVe+DvH4yEHzb+/GUH/SGoxHLfE6H+d5T3iAoLe1ySViW6i2o8nLZs7zP/lhOQY2cn1DpJL9irFwB/7WyQrNhEkXts5kcb/ZsYnhbbbEURXrq3uoFSxTPA25AKL9BN+beNTfqnJe1w99BZoTYqan2bmKqOl3zhXn6vJdKWVs+yfFj2zrloC3sMr+F2wdqyOc/MXAkvvXY/FdT3uNyyepLNK87LSxV7o2ok0BWNs3H+j/OuE70I9bOv991WXT7M2g9rcpx3g9Xi45C8fxWthc1MsaBw+Udz3WVhRMDNmRo5yDHCPvHV63ooZHquY/Hgsdn0BMv5uQ4GuD42bh9BlVePKKyh8ztZKwFOzSDqvdbYnIvV4bzB6GO9hIEMwk9j8uL5WvJ9QLE59XLbrBOtO08ojJ1h8QUcWVksUJhd6CUi6biTGFrZEf/uUQ2tQ6GUWhqu4oh7nlZ3Oefa9BaXoZ0KOPvzxjEe44/EKGpHbP6GTLuDMJfFWe+pmAMxIln6pqqsItWwS0nLzbj51m5OWCsnreSDqi2l+iUdmlIoBZf8ZkADjxZJySZq7yz2MoMfuF/C13YB1Dv5q0LJb1DcDxQ=" #AWS_SECRET_ACCESS_KEY
-before_install:
-  - eval `ssh-agent -s`
-  - chmod 600 ~/.ssh/config
-  - openssl aes-256-cbc -K $encrypted_1fc90f464345_key -iv $encrypted_1fc90f464345_iv -in infrakey.pem.enc -out ./infrakey.pem -d
-  - mv infrakey.pem ~/.ssh/
- - chmod 600 ~/.ssh/infrakey.pem
+#before_install:
+#  - eval `ssh-agent -s`
+#  - chmod 600 ~/.ssh/config
+#  - openssl aes-256-cbc -K $encrypted_1fc90f464345_key -iv $encrypted_1fc90f464345_iv -in infrakey.pem.enc -out ./infrakey.pem -d
+#  - mv infrakey.pem ~/.ssh/
+# - chmod 600 ~/.ssh/infrakey.pem
 #install:
 #  - sudo pip install awscli
 before_script:
