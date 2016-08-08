@@ -63,8 +63,3 @@ after_success:
 #  - aws ec2 start-instances --instance-ids i-f5a9e46a
 #  - ssh -i ~/.ssh/infrakey.pem -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null centos@52.197.222.172 sudo ./scripts/run_vagrant.sh
 
-
-
-
-
-
